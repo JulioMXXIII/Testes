@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,600;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('img/space.jpg')no-repeat center/cover;
+    background-color: rgba(0,0,0,0.4);
+    background-blend-mode: color;
+}
+
+#caixa{
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: transparent;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#caixa form{
+    position: absolute;
+    background: #26334e;
+    padding: 47px 37px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#caixa form h2{
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+#caixa form .input{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+#caixa form .input input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #000;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 0.05.em;
+    transition: 0.5s;
+    z-index: 10;
+    border: none;
+}
+
+#caixa form .input span{
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: #ffff;
+    font-weight: lighter;
+    letter-spacing: 0.05.em;
+    transition: 0.5s;
+}
+
+#caixa form .input input:valid ~ span,
+#caixa form .input input:focus ~ span{
+    color: #ffff;
+    font-size: 0.96em;
+    transform: translateY(-34px);
+}
+
+#caixa form .input i{
+    left: 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5;
+    pointer-events: none;
+}
+
+#caixa form .input input:valid ~ i,
+#caixa form .input input:focus ~ i{
+    height: 44px;
+}
+
+#caixa form .links{
+    display: flex;
+    justify-content: space-between;
+}
+
+#caixa form .links a{
+    margin: 20px 0;
+    font-size: 0.86em;
+    color: white;
+    text-decoration: underline;   
+}
+
+#caixa form .links a:hover,
+#caixa form .links a:nth-child(2){
+    color: white;
+}
+
+#caixa form input[type="submit"]{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #ffff;
+    font-size: 1em;
+    border-radius: 6px;
+    font-weight:  600;
+    width: 50%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+#caixa form input[type="submit"]:active{
+    opacity: 0.4;
+    transition: 0.3s;
+}
+
+#caixa form input[type="text"]{
+    overflow: hidden;
+}
+
+#caixa form input[type="password"]{
+    overflow: hidden;
+
+}
+
+/*animacoes*/
+
+#caixa::after{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent, #ea02ff, #ea02ff, #ea02ff);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 3s linear infinite;
+    animation-delay: -0.7s;
+}
+
+#caixa::before{
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, transparent,  #1014fd, #1014fd, #1014fd);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate{
+    0% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 500px){
+    .caixa{
+        flex-wrap: wrap;
+    }
+    .caixa :where(.input, .links){
+        row-gap: 15px;
+    }
+}
