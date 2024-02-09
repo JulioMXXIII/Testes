@@ -1,0 +1,131 @@
+/*
+   Desenvolvido por: Julio Magrão
+   Início: 28-12-2023
+   Término:..*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,600;1,100&display=swap');
+
+* {
+    margin-top: 10px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('img/estudante.jpg') no-repeat center/cover;
+    background-color: rgba(0,0,0,0.3);
+    background-blend-mode: color;
+    background-size: cover;
+    background-position: center; 
+}
+
+.form {
+    width: 420px;
+    height: 30%;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .4);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: white;
+    border-radius: 10px;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+.form .logo{
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    justify-content: center;
+    margin: auto;
+}
+
+/*.form h1{
+    font-size: 2.rem;
+    text-align: center;
+    text-transform: uppercase;
+}*/
+
+.form .input-area{
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    margin: 30px 0;
+}
+
+.input-area input{
+ width: 100%;
+ height: 30%;
+ background: transparent;
+ border: none;
+ outline: none;
+ border: 2px solid rgba(225, 255, 255, .2);
+ border-radius: 40px;
+ font-size: 16px;
+ padding: 20px 45px 20px 40px;
+ color: #ffffff;
+ font-size: 1rem;
+}
+
+.input-area input::placeholder{
+    color: grey;
+}
+
+.form .lembrar{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin: 15px 0 15px;
+}
+
+.lembrar label input{
+    margin-right: 3px;
+    margin-top: 5px;
+}
+
+.lembrar label:hover{
+    text-decoration: underline;
+    color:#2e962e;
+    cursor: pointer;
+}
+
+.lembrar a{
+    color: white;
+}
+
+.lembrar a:hover{
+    text-decoration: underline;
+    color:#f86732;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    background: green;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    font-size: 1.2rem;
+    transition: background 540ms ease;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background: #9edb8a;
+}
+
+@media screen and (max-width: 500px){
+    .form{
+        flex-wrap: wrap;
+    }
+    .form :where(.input-area, .lembrar){
+        row-gap: 15px;
+    }
+}
